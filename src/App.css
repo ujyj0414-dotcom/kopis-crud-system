@@ -1,0 +1,81 @@
+/* --- 사이트 헤더 스타일 --- */
+.site-header {
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.header-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- 로고 스타일 --- */
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo-link svg {
+  width: 32px;
+  height: 32px;
+  color: #0d6efd;
+}
+
+.logo-text {
+  /* 멋진 폰트가 없다면 기본 sans-serif 폰트로 대체됩니다. */
+  font-family: "Montserrat", "Helvetica Neue", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #212529;
+}
+
+/* --- 네비게이션 메뉴 스타일 --- */
+.main-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-link {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #495057;
+  text-decoration: none;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #0d6efd;
+}
+
+.nav-link.active {
+  color: #0d6efd;
+}
+
+/* 활성화된 메뉴 아래 밑줄 효과 (헤더 높이(70px)에 맞춰 조정됨) */
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #0d6efd;
+}
+
+/* --- 메인 콘텐츠 영역 스타일 --- */
+.main-content {
+  /* 페이지 콘텐츠가 헤더에 가려지지 않도록 상단 여백을 줍니다. */
+  padding-top: 32px;
+}

@@ -1,0 +1,157 @@
+.container {
+  width: 90%;
+  max-width: 1280px;
+  margin: 20px auto;
+}
+
+.performance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.performance-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.performance-card:hover {
+  transform: translateY(-5px);
+}
+
+.poster-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: transparent;
+  transition: background-color 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay h3 {
+  position: absolute;
+  bottom: 1rem;
+  left: 8px;
+  right: 8px;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+  text-align: left;
+  text-shadow: 1px 1px 4px black, 0 0 4px black;
+  font-family: "Malgun Gothic", "Apple SD Gothic Neo", "Nanum Gothic", "Dotum",
+    "Gulim", sans-serif;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: top 0.4s ease-in-out, bottom 0.4s ease-in-out,
+    transform 0.4s ease-in-out, color 0.4s, text-shadow 0.4s;
+}
+
+/* [수정] .favorites-page 클래스로 스타일 범위 제한 */
+.favorites-page .overlay p,
+.favorites-page .overlay .button-group {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease-in-out, visibility 0s 0.4s,
+    transform 0.4s ease-in-out;
+}
+
+.performance-card:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.performance-card:hover .overlay h3 {
+  bottom: auto;
+  top: 33.3%;
+  left: 15px;
+  right: 15px;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  text-shadow: none;
+  text-align: center;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+/* [수정] .favorites-page 클래스로 스타일 범위 제한 */
+.favorites-page .performance-card:hover .overlay p,
+.favorites-page .performance-card:hover .overlay .button-group {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.4s ease-in-out, visibility 0s,
+    transform 0.4s ease-in-out;
+}
+
+/* --- [핵심 수정] 아래 모든 스타일 규칙에 .favorites-page 를 추가하여 격리 --- */
+
+.favorites-page .button-group {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  width: 90%;
+  max-width: 320px;
+}
+
+.favorites-page .favorite-btn,
+.favorites-page .checklist-btn {
+  padding: 8px 16px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 1rem;
+  text-decoration: none;
+  font-family: sans-serif;
+  transition: all 0.2s;
+  text-align: center;
+  flex: 1;
+  white-space: nowrap;
+}
+
+.favorites-page .favorite-btn.favorited {
+  background-color: #ff4d4d;
+  border-color: #ff4d4d;
+  color: white;
+}
+
+.favorites-page .favorite-btn:hover,
+.favorites-page .checklist-btn:hover {
+  background: white;
+  color: black;
+}
+
+.favorites-page .empty-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #777;
+  padding: 50px 0;
+}
+
+/* [신규] 로딩 및 상태 메시지 스타일 (격리됨) */
+.favorites-page .status-message {
+  text-align: center;
+  padding: 80px 0;
+  font-size: 1.2rem;
+  color: #777;
+}

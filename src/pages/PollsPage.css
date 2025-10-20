@@ -1,0 +1,85 @@
+/* [최종 수정] src/pages/PollsPage.css (스타일 1: 원형 배경 아이콘 적용) */
+
+.card-actions-container {
+  position: absolute;
+  top: 55%;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.like-dislike-group {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.action-button-group,
+.comment-group {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  transition: transform 0.2s ease;
+}
+
+.action-button-group {
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.action-button-group:hover {
+  transform: scale(1.1);
+}
+
+.comment-group {
+  gap: 8px;
+}
+
+/* [핵심] 아이콘을 감싸는 원형 배경 스타일 */
+.action-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* 기본 배경: 반투명 검정 */
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  /* 블러 효과 */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  /* 배경색 변경 애니메이션 */
+  transition: background-color 0.3s ease-in-out;
+}
+
+.action-icon-wrapper svg {
+  width: 24px;
+  height: 24px;
+  stroke: white; /* 아이콘 선 색상은 항상 흰색 */
+}
+
+.action-count {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* --- [핵심] 클릭 시 배경색 변경 애니메이션 --- */
+
+/* 좋아요(like) 그룹이 active일 때 */
+.action-button-group.like.active .action-icon-wrapper {
+  background-color: #ef4444; /* 빨간색 */
+}
+
+/* 싫어요(dislike) 그룹이 active일 때 */
+.action-button-group.dislike.active .action-icon-wrapper {
+  background-color: #3b82f6; /* 파란색 */
+}
