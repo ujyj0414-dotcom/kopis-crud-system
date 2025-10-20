@@ -63,3 +63,5 @@ STAGE FINDER는 KOPIS API를 활용하여 국내 공연 정보를 손쉽게 탐�
 ## 4. Flow 및 UI
 
 ### 기능 흐름도 (Flow Chart)
+
+![프로젝트 기능 흐름도](./images/flowchart.jpg)
