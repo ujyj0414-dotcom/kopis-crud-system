@@ -36,6 +36,32 @@ STAGE FINDER는 KOPIS API를 활용하여 국내 공연 정보를 손쉽게 탐�
 
 ## 3. 팀원 및 역할 분담
 
+<h3 align="center">Contributors</h3>
+<table border="0" style="border:none; border-collapse:collapse;">
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="33.3%">
+        <a href="https://github.com/teomichaelpark">
+          <img src="https://github.com/teomichaelpark-glitch.png?size=100" alt="박태오 프로필 사진"/><br />
+          <sub><b>박태오 (팀장)</b></sub>
+        </a>
+      </td>
+      <td align="center" valign="top" width="33.3%">
+        <a href="https://github.com/ujyj0414-dotcom">
+          <img src="https://github.com/ujyj0414-dotcom.png?size=100" alt="전유진 프로필 사진"/><br />
+          <sub><b>전유진 (팀원)</b></sub>
+        </a>
+      </td>
+      <td align="center" valign="top" width="33.3%">
+        <a href="https://github.com/01nJun">
+          <img src="https://github.com/01nJun.png?size=100" alt="오인준 프로필 사진"/><br />
+          <sub><b>오인준 (팀원)</b></sub>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 ### 박태오 (팀장 / Front-End)
 
 - **프로젝트 총괄 및 아키텍처 설계:** 초기 기술 스택 선정, Custom Hook 기반의 상태 관리 구조 설계 및 팀원 간의 역할 조율을 담당했습니다.
