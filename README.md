@@ -93,37 +93,21 @@ _(필터링 및 무한 스크롤)_
 <br>
 
 <details>
-
 <summary><b>🔍 기능 상세 보기 (구현 목록 및 스크린샷)</b></summary>
-
 <br>
-
 <b>[주요 구현 기능]</b>
-
 <ul>
-
-<li>KOPIS (공연예술통합전산망) <b>외부 API 연동</b></li>
-
-<li>'장르', '지역', '상태' 3가지 State를 조합한 <b>동적 API 재호출</b> (중첩 필터링)</li>
-
-<li><code>Intersection Observer</code> API를 사용한 <b>무한 스크롤</b> 구현</li>
-
-<li><code>useFavorites</code> 커스텀 훅을 통한 전역 <b>'찜하기'</b> 상태 관리</li>
-
-<li>KOPIS 상세 페이지로 연결되는 <b>'예매하기'</b> 링크 제공</li>
-
+  <li>KOPIS (공연예술통합전산망) <b>외부 API 연동</b></li>
+  <li>'장르', '지역', '상태' 3가지 State를 조합한 <b>동적 API 재호출</b> (중첩 필터링)</li>
+  <li><code>Intersection Observer</code> API를 사용한 <b>무한 스크롤</b> 구현</li>
+  <li><code>useFavorites</code> 커스텀 훅을 통한 전역 <b>'찜하기'</b> 상태 관리</li>
+  <li>KOPIS 상세 페이지로 연결되는 <b>'예매하기'</b> 링크 제공</li>
 </ul>
-
 <hr>
-
 <b>[대표 스크린샷]</b><br>
-
 아래는 3가지 필터가 중첩 적용된 결과이며, 카드에 마우스를 올렸을 때 '찜하기'와 '예매하기' 버튼이 활성화된 화면입니다.
-
 <br>
-
-![필터 결과 및 핵심 기능 스크린샷](./images/perf_result_features.png)
-
+<img src="./images/perf_result_features.png" alt="필터 결과 및 핵심 기능 스크린샷" width="600">
 </details>
 
 ---
@@ -138,35 +122,20 @@ _(메인 탭 네비게이션)_
 <br>
 
 <details>
-
 <summary><b>🔍 기능 상세 보기 (구현 목록 및 스크린샷)</b></summary>
-
 <br>
-
 <b>[주요 구현 기능]</b>
-
 <ul>
-
-<li>'인기글', '투표', '게시판' 3가지 메인 탭으로 <b>조건부 렌더링</b></li>
-
-<li>'인기글' 탭: '일간/주간/월간' 하위 필터링 및 <b>무한 스크롤</b> 적용</li>
-
-<li>'투표' 탭: 'HOT/반반/신규' 하위 필터링 및 <b>'좋아요/싫어요' 투표 로직</b> 구현</li>
-
-<li>'게시판' 탭: 게시판 라이브러리 페이지로 <b>라우팅</b> 및 개별 게시판 <b>'찜하기'</b> 기능 구현</li>
-
+  <li>'인기글', '투표', '게시판' 3가지 메인 탭으로 <b>조건부 렌더링</b></li>
+  <li>'인기글' 탭: '일간/주간/월간' 하위 필터링 및 <b>무한 스크롤</b> 적용</li>
+  <li>'투표' 탭: 'HOT/반반/신규' 하위 필터링 및 <b>'좋아요/싫어요' 투표 로직</b> 구현</li>
+  <li>'게시판' 탭: 게시판 라이브러리 페이지로 <b>라우팅</b> 및 개별 게시판 <b>'찜하기'</b> 기능 구현</li>
 </ul>
-
 <hr>
-
 <b>[대표 스크린샷]</b><br>
-
 아래는 커뮤니티 탭의 대표 기능 중 하나인 '투표' 탭의 구현 화면입니다.
-
 <br>
-
-![투표 탭 대표 스크린샷](./images/comm_poll_features.png)
-
+<img src="./images/comm_poll_features.png" alt="투표 탭 대표 스크린샷" width="600">
 </details>
 
 ---
@@ -181,37 +150,21 @@ _(체크리스트 CRUD 전체 사이클)_
 <br>
 
 <details>
-
 <summary><b>🔍 기능 상세 보기 (구현 목록 및 스크린샷)</b></summary>
-
 <br>
-
 <b>[주요 구현 기능]</b>
-
 <ul>
-
-<li>'찜 목록' 페이지: 찜한 항목 <b>조회(Read)</b> 및 <b>삭제(Delete)</b> 기능 구현</li>
-
-<li>'체크리스트' 상세 페이지: <code>useChecklist</code> 커스텀 훅을 통한 <b>CRUD</b> 구현</li>
-
-<li><code>localStorage</code>를 활용한 체크리스트 데이터 영구 저장</li>
-
-<li>항목 <b>생성(Create)</b>, <b>조회(Read)</b>, 체크박스를 통한 <b>수정(Update)</b>, 버튼을 통한 <b>삭제(Delete)</b></li>
-
+  <li>'찜 목록' 페이지: 찜한 항목 <b>조회(Read)</b> 및 <b>삭제(Delete)</b> 기능 구현</li>
+  <li>'체크리스트' 상세 페이지: <code>useChecklist</code> 커스텀 훅을 통한 <b>CRUD</b> 구현</li>
+  <li><code>localStorage</code>를 활용한 체크리스트 데이터 영구 저장</li>
+  <li>항목 <b>생성(Create)</b>, <b>조회(Read)</b>, 체크박스를 통한 <b>수정(Update)</b>, 버튼을 통한 <b>삭제(Delete)</b></li>
 </ul>
-
 <hr>
-
 <b>[대표 스크린샷: 체크리스트 CRUD]</b><br>
-
 이 상세 페이지에서 **CRUD** 4가지 기능이 모두 구현됩니다.<br>
-
 `localStorage`에서 목록을 **조회(Read)**하고, 하단의 입력폼으로 항목을 **생성(Create)**하며, 체크박스로 상태를 **수정(Update)**하고, 아이콘으로 **삭제(Delete)**할 수 있습니다.
-
 <br>
-
-![체크리스트 CRUD 기능 스크린샷](./images/mypage_detail_crud.png)
-
+<img src="./images/mypage_detail_crud.png" alt="체크리스트 CRUD 기능 스크린샷" width="600">
 </details>
 
 ---
@@ -221,33 +174,18 @@ _(체크리스트 CRUD 전체 사이클)_
 프로젝트의 **모든 페이지**는 CSS Grid Layout과 Media Query를 활용하여 PC, 태블릿, 모바일 등 다양한 디바이스 환경에 대응합니다. (아래는 '잡담' 탭의 예시 화면입니다.)
 
 <table border="0" style="border:none; border-collapse:collapse;">
-
-<tr style="border:none;">
-
-<td align="center" style="border:none; padding: 5px;">
-
-<img src="./images/responsive_pc.png" width="400" alt="PC 화면">
-
-<br><b>PC (데스크탑)</b>
-
-</td>
-
-<td align="center" style="border:none; padding: 5px;">
-
-<img src="./images/responsive_tablet.png" width="250" alt="태블릿 화면">
-
-<br><b>태블릿 (886px)</b>
-
-</td>
-
-<td align="center" style="border:none; padding: 5px;">
-
-<img src="./images/responsive_mobile.png" width="150" alt="모바일 화면">
-
-<br><b>모바일 (582px)</b>
-
-</td>
-
-</tr>
-
+  <tr style="border:none;">
+    <td align="center" style="border:none; padding: 5px;">
+      <img src="./images/responsive_pc.png" width="400" alt="PC 화면">
+      <br><b>PC (데스크탑)</b>
+    </td>
+    <td align="center" style="border:none; padding: 5px;">
+      <img src="./images/responsive_tablet.png" width="250" alt="태블릿 화면">
+      <br><b>태블릿 (886px)</b>
+    </td>
+    <td align="center" style="border:none; padding: 5px;">
+      <img src="./images/responsive_mobile.png" width="150" alt="모바일 화면">
+      <br><b>모바일 (582px)</b>
+    </td>
+  </tr>
 </table>
