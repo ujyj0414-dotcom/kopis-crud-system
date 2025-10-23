@@ -10,31 +10,31 @@ STAGE FINDER는 KOPIS API를 활용하여 국내 공연 정보를 손쉽게 탐�
 
 - **참고 사이트 및 차별점**
 
-  - **참고 사이트:** 인터파크 티켓, 예스24 티켓 등 기존 예매 사이트
-  - **차별점:**
-    1.  **커뮤니티 기능 통합:** 단순 정보 조회를 넘어, [인기글], [투표], [게시판] 기능을 통해 사용자 간의 활발한 소통을 유도합니다.
-    2.  **개인화된 '준비 체크리스트':** 공연 관람 전 필요한 준비물(보조배터리, 티켓, 신분증 등)을 챙기기 위해 SNS에서 체크리스트를 공유하는 경우가 많습니다. STAGE FINDER는 이 경험을 서비스 내에 통합했습니다. 사용자는 **찜한 공연별로 나만의 '준비 체크리스트'를 직접 생성하고 관리**함으로써, 분산된 정보 없이 체계적으로 관람을 준비할 수 있습니다.
-    3.  **분산된 예매처 정보의 통합 게이트웨이:** 기존 예매 사이트(인터파크, 예스24 등)는 자사에서 판매하는 공연 정보만 보여줍니다. 하지만 STAGE FINDER는 KOPIS API를 통해 이들을 포함하여, **네이버 예매, 개별 극단 자체 사이트** 등 흩어져 있는 **모든 예매처의 정보를 집계**합니다. 사용자는 '예매하기' 버튼을 통해 KOPIS 공식 상세 페이지로 이동하며, 그곳에 있는 **'예매처 바로가기'**를 통해 다시 검색할 필요 없이 원하는 예매처로 정확하게 이동할 수 있습니다.
+- **참고 사이트:** 인터파크 티켓, 예스24 티켓 등 기존 예매 사이트
+  - **차별점:**
+    1.  **커뮤니티 기능 통합:** 단순 정보 조회를 넘어, [인기글], [투표], [게시판] 기능을 통해 사용자 간의 활발한 소통을 유도합니다.
+    2.  **개인화된 '준비 체크리스트':** 공연 관람 전 필요한 준비물(보조배터리, 티켓, 신분증 등)을 챙기기 위해 SNS에서 체크리스트를 공유하는 경우가 많습니다. STAGE FINDER는 이 경험을 서비스 내에 통합했습니다. 사용자는 **찜한 공연별로 나만의 '준비 체크리스트'를 직접 생성하고 관리**함으로써, 분산된 정보 없이 체계적으로 관람을 준비할 수 있습니다.
+    3.  **분산된 예매처 정보의 통합 게이트웨이:** 기존 예매 사이트(인터파크, 예스24 등)는 자사에서 판매하는 공연 정보만 보여줍니다. 하지만 STAGE FINDER는 KOPIS API를 통해 이들을 포함하여, **네이버 예매, 개별 극단 자체 사이트** 등 흩어져 있는 **모든 예매처의 정보를 집계**합니다. 사용자는 '예매하기' 버튼을 통해 KOPIS 공식 상세 페이지로 이동하며, 그곳에 있는 **'예매처 바로가기'**를 통해 다시 검색할 필요 없이 원하는 예매처로 정확하게 이동할 수 있습니다.
 
 - **팀 협업 노션 링크**
-  - [여기에 팀 노션 페이지 링크를 삽입하세요]
+    - [여기에 팀 노션 페이지 링크를 삽입하세요]
 
 <br>
 
 ## 2. 핵심 기능 구현
 
-| 기능                 | 구현 내용                                                                                                                   | 적용 기술/코드                    |
-| :------------------- | :-------------------------------------------------------------------------------------------------------------------------- | :-------------------------------- |
-| **CRUD**             | **'나만의 체크리스트' 기능**을 중심으로 CRUD를 구현했습니다.                                                                | `useChecklist.js`                 |
-|                      | **C (Create):** `addItem()`을 통해 새 체크리스트 항목 추가                                                                  | `FavoriteDetail.js`               |
-|                      | **R (Read):** `items` 상태를 통해 해당 공연의 체크리스트 목록 조회                                                          | `FavoriteDetail.js`               |
-|                      | **U (Update):** `updateItem()`, `toggleItem()`으로 항목 내용 수정 및 완료 처리                                              | `FavoriteDetail.js`               |
-|                      | **D (Delete):** `deleteItem()`으로 특정 항목 삭제                                                                           | `FavoriteDetail.js`               |
-| **SPA (Routing)**    | `react-router-dom`을 사용하여 페이지 간 깜빡임 없는 사용자 경험 제공                                                        | `App.js` 내 `<Routes>`, `<Route>` |
-| **무한 스크롤**      | **`Intersection Observer API`**를 직접 구현하여 사용자가 페이지 하단에 도달하면 다음 페이지의 데이터를 자동으로 로드합니다. | `Performances.js`                 |
-| **코드 스플리팅**    | 초기 로딩 속도 최적화를 위해 각 페이지 컴포넌트를 **`lazy()`**와 **`<Suspense>`**를 사용하여 분리했습니다.                  | `App.js`                          |
-| **외부 데이터 연동** | **KOPIS (공연예술통합전산망)**의 오픈 API를 활용하여 실시간 공연 데이터를 연동했습니다.                                     | `api/kopis.js`                    |
-| **반응형 웹**        | CSS Grid Layout과 Media Query를 활용하여 PC, 태블릿, 모바일 등 다양한 디바이스 환경에 대응하는 UI를 구현했습니다.           | `Performances.css` 등             |
+| 기능                  | 구현 내용                                                                                                                    | 적용 기술/코드                     |
+| :-------------------- | :--------------------------------------------------------------------------------------------------------------------------- | :--------------------------------- |
+| **CRUD**              | **'나만의 체크리스트' 기능**을 중심으로 CRUD를 구현했습니다.                                                                 | `useChecklist.js`                  |
+|                       | **C (Create):** `addItem()`을 통해 새 체크리스트 항목 추가                                                                   | `FavoriteDetail.js`                |
+|                       | **R (Read):** `items` 상태를 통해 해당 공연의 체크리스트 목록 조회                                                           | `FavoriteDetail.js`                |
+|                       | **U (Update):** `updateItem()`, `toggleItem()`으로 항목 내용 수정 및 완료 처리                                               | `FavoriteDetail.js`                |
+|                       | **D (Delete):** `deleteItem()`으로 특정 항목 삭제                                                                            | `FavoriteDetail.js`                |
+| **SPA (Routing)**     | `react-router-dom`을 사용하여 페이지 간 깜빡임 없는 사용자 경험 제공                                                         | `App.js` 내 `<Routes>`, `<Route>`  |
+| **무한 스크롤**       | **`Intersection Observer API`**를 직접 구현하여 사용자가 페이지 하단에 도달하면 다음 페이지의 데이터를 자동으로 로드합니다.  | `Performances.js`                  |
+| **코드 스플리팅**     | 초기 로딩 속도 최적화를 위해 각 페이지 컴포넌트를 **`lazy()`**와 **`<Suspense>`**를 사용하여 분리했습니다.                   | `App.js`                           |
+| **외부 데이터 연동**  | **KOPIS (공연예술통합전산망)**의 오픈 API를 활용하여 실시간 공연 데이터를 연동했습니다.                                      | `api/kopis.js`                     |
+| **반응형 웹**         | CSS Grid Layout과 Media Query를 활용하여 PC, 태블릿, 모바일 등 다양한 디바이스 환경에 대응하는 UI를 구현했습니다.            | `Performances.css` 등              |
 
 <br>
 
@@ -64,7 +64,7 @@ STAGE FINDER는 KOPIS API를 활용하여 국내 공연 정보를 손쉽게 탐�
 
 ### 기능 흐름도 (Flow Chart)
 
-![프로젝트 기능 흐름도](./images/flowchart.JPG)
+<img src="images/flowchart.JPG" alt="프로젝트 기능 흐름도" width="100%">
 
 ## 5. 주요 기능 실행 화면
 
@@ -73,26 +73,26 @@ STAGE FINDER는 KOPIS API를 활용하여 국내 공연 정보를 손쉽게 탐�
 **1. 핵심 기능 (GIF)**
 _(필터링 및 무한 스크롤)_
 
-![공연 기능 GIF](./images/performances.gif)
+<img src="images/performances.gif" alt="공연 기능 GIF" width="100%">
 
 <br>
 
 <details>
 <summary><b>🔍 기능 상세 보기 (구현 목록 및 스크린샷)</b></summary>
 <br>
-  <b>[주요 구현 기능]</b>
-  <ul>
-    <li>KOPIS (공연예술통합전산망) <b>외부 API 연동</b></li>
-    <li>'장르', '지역', '상태' 3가지 State를 조합한 <b>동적 API 재호출</b> (중첩 필터링)</li>
-    <li><code>Intersection Observer</code> API를 사용한 <b>무한 스크롤</b> 구현</li>
-    <li><code>useFavorites</code> 커스텀 훅을 통한 전역 <b>'찜하기'</b> 상태 관리</li>
-    <li>KOPIS 상세 페이지로 연결되는 <b>'예매하기'</b> 링크 제공</li>
-  </ul>
-  <hr>
-  <b>[대표 스크린샷]</b><br>
-  아래는 3가지 필터가 중첩 적용된 결과이며, 카드에 마우스를 올렸을 때 '찜하기'와 '예매하기' 버튼이 활성화된 화면입니다.
-  <br>
-  ![필터 결과 및 핵심 기능 스크린샷](./images/perf_result_features.png)
+  <b>[주요 구현 기능]</b>
+  <ul>
+    <li>KOPIS (공연예술통합전산망) <b>외부 API 연동</b></li>
+    <li>'장르', '지역', '상태' 3가지 State를 조합한 <b>동적 API 재호출</b> (중첩 필터링)</li>
+    <li><code>Intersection Observer</code> API를 사용한 <b>무한 스크롤</b> 구현</li>
+    <li><code>useFavorites</code> 커스텀 훅을 통한 전역 <b>'찜하기'</b> 상태 관리</li>
+    <li>KOPIS 상세 페이지로 연결되는 <b>'예매하기'</b> 링크 제공</li>
+  </ul>
+  <hr>
+  <b>[대표 스크린샷]</b><br>
+  아래는 3가지 필터가 중첩 적용된 결과이며, 카드에 마우스를 올렸을 때 '찜하기'와 '예매하기' 버튼이 활성화된 화면입니다.
+  <br>
+  <img src="images/perf_result_features.png" alt="필터 결과 및 핵심 기능 스크린샷" width="100%">
 </details>
 
 ---
@@ -102,25 +102,25 @@ _(필터링 및 무한 스크롤)_
 **1. 커뮤니티 탭 기능 (GIF)**
 _(메인 탭 네비게이션)_
 
-![커뮤니티 기능 GIF](./images/community.gif)
+<img src="images/community.gif" alt="커뮤니티 기능 GIF" width="100%">
 
 <br>
 
 <details>
 <summary><b>🔍 기능 상세 보기 (구현 목록 및 스크린샷)</b></summary>
 <br>
-  <b>[주요 구현 기능]</b>
-  <ul>
-    <li>'인기글', '투표', '게시판' 3가지 메인 탭으로 <b>조건부 렌더링</b></li>
-    <li>'인기글' 탭: '일간/주간/월간' 하위 필터링 및 <b>무한 스크롤</b> 적용</li>
-    <li>'투표' 탭: 'HOT/반반/신규' 하위 필터링 및 <b>'좋아요/싫어요' 투표 로직</b> 구현</li>
-    <li>'게시판' 탭: 게시판 라이브러리 페이지로 <b>라우팅</b> 및 개별 게시판 <b>'찜하기'</b> 기능 구현</li>
-  </ul>
-  <hr>
-  <b>[대표 스크린샷]</b><br>
-  아래는 커뮤니티 탭의 대표 기능 중 하나인 '투표' 탭의 구현 화면입니다.
-  <br>
-  ![투표 탭 대표 스크린샷](./images/comm_poll_features.png)
+  <b>[주요 구현 기능]</b>
+  <ul>
+    <li>'인기글', '투표', '게시판' 3가지 메인 탭으로 <b>조건부 렌더링</b></li>
+    <li>'인기글' 탭: '일간/주간/월간' 하위 필터링 및 <b>무한 스크롤</b> 적용</li>
+    <li>'투표' 탭: 'HOT/반반/신규' 하위 필터링 및 <b>'좋아요/싫어요' 투표 로직</b> 구현</li>
+    <li>'게시판' 탭: 게시판 라이브러리 페이지로 <b>라우팅</b> 및 개별 게시판 <b>'찜하기'</b> 기능 구현</li>
+  </ul>
+  <hr>
+  <b>[대표 스크린샷]</b><br>
+  아래는 커뮤니티 탭의 대표 기능 중 하나인 '투표' 탭의 구현 화면입니다.
+  <br>
+  <img src="images/comm_poll_features.png" alt="투표 탭 대표 스크린샷" width="100%">
 </details>
 
 ---
@@ -130,26 +130,26 @@ _(메인 탭 네비게이션)_
 **1. 찜 취소 및 체크리스트 CRUD (GIF)**
 _(체크리스트 CRUD 전체 사이클)_
 
-![마이페이지 CRUD GIF](./images/mypage_crud.gif)
+<img src="images/mypage_crud.gif" alt="마이페이지 CRUD GIF" width="100%">
 
 <br>
 
 <details>
 <summary><b>🔍 기능 상세 보기 (구현 목록 및 스크린샷)</b></summary>
 <br>
-  <b>[주요 구현 기능]</b>
-  <ul>
-    <li>'찜 목록' 페이지: 찜한 항목 <b>조회(Read)</b> 및 <b>삭제(Delete)</b> 기능 구현</li>
-    <li>'체크리스트' 상세 페이지: <code>useChecklist</code> 커스텀 훅을 통한 <b>CRUD</b> 구현</li>
-    <li><code>localStorage</code>를 활용한 체크리스트 데이터 영구 저장</li>
-    <li>항목 <b>생성(Create)</b>, <b>조회(Read)</b>, 체크박스를 통한 <b>수정(Update)</b>, 버튼을 통한 <b>삭제(Delete)</b></li>
-  </ul>
-  <hr>
-  <b>[대표 스크린샷: 체크리스트 CRUD]</b><br>
-  이 상세 페이지에서 **CRUD** 4가지 기능이 모두 구현됩니다.<br> 
-  `localStorage`에서 목록을 **조회(Read)**하고, 하단의 입력폼으로 항목을 **생성(Create)**하며, 체크박스로 상태를 **수정(Update)**하고, 아이콘으로 **삭제(Delete)**할 수 있습니다.
-  <br>
-  ![체크리스트 CRUD 기능 스크린샷](./images/mypage_detail_crud.png)
+  <b>[주요 구현 기능]</b>
+  <ul>
+    <li>'찜 목록' 페이지: 찜한 항목 <b>조회(Read)</b> 및 <b>삭제(Delete)</b> 기능 구현</li>
+    <li>'체크리스트' 상세 페이지: <code>useChecklist</code> 커스텀 훅을 통한 <b>CRUD</b> 구현</li>
+    <li><code>localStorage</code>를 활용한 체크리스트 데이터 영구 저장</li>
+    <li>항목 <b>생성(Create)</b>, <b>조회(Read)</b>, 체크박스를 통한 <b>수정(Update)</b>, 버튼을 통한 <b>삭제(Delete)</b></li>
+  </ul>
+  <hr>
+  <b>[대표 스크린샷: 체크리스트 CRUD]</b><br>
+  이 상세 페이지에서 **CRUD** 4가지 기능이 모두 구현됩니다.<br> 
+  `localStorage`에서 목록을 **조회(Read)**하고, 하단의 입력폼으로 항목을 **생성(Create)**하며, 체크박스로 상태를 **수정(Update)**하고, 아이콘으로 **삭제(Delete)**할 수 있습니다.
+  <br>
+  <img src="images/mypage_detail_crud.png" alt="체크리스트 CRUD 기능 스크린샷" width="100%">
 </details>
 
 ---
@@ -159,18 +159,18 @@ _(체크리스트 CRUD 전체 사이클)_
 프로젝트의 **모든 페이지**는 CSS Grid Layout과 Media Query를 활용하여 PC, 태블릿, 모바일 등 다양한 디바이스 환경에 대응합니다. (아래는 '잡담' 탭의 예시 화면입니다.)
 
 <table border="0" style="border:none; border-collapse:collapse;">
-  <tr style="border:none;">
-    <td align="center" style="border:none; padding: 5px;">
-      <img src="./images/responsive_pc.png" width="400" alt="PC 화면">
-      <br><b>PC (데스크탑)</b>
-    </td>
-    <td align="center" style="border:none; padding: 5px;">
-      <img src="./images/responsive_tablet.png" width="250" alt="태블릿 화면">
-      <br><b>태블릿 (886px)</b>
-    </td>
-    <td align="center" style="border:none; padding: 5px;">
-      <img src="./images/responsive_mobile.png" width="150" alt="모바일 화면">
-      <br><b>모바일 (582px)</b>
-    </td>
-  </tr>
+  <tr style="border:none;">
+    <td align="center" style="border:none; padding: 5px;">
+      <img src="images/responsive_pc.png" width="400" alt="PC 화면">
+      <br><b>PC (데스크탑)</b>
+    </td>
+    <td align="center" style="border:none; padding: 5px;">
+      <img src="images/responsive_tablet.png" width="250" alt="태블릿 화면">
+      <br><b>태블릿 (886px)</b>
+    </td>
+    <td align="center" style="border:none; padding: 5px;">
+      <img src="images/responsive_mobile.png" width="150" alt="모바일 화면">
+      <br><b>모바일 (582px)</b>
+    </td>
+  </tr>
 </table>
