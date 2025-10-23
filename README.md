@@ -19,18 +19,18 @@ STAGE FINDER는 KOPIS API를 활용하여 국내 공연 정보를 손쉽게 탐�
 
 ## 2. 핵심 기능 구현
 
-| 기능                 | 구현 내용                                                                                                                   | 적용 기술/코드                    |
-| :------------------- | :-------------------------------------------------------------------------------------------------------------------------- | :-------------------------------- |
-| **CRUD**             | **'나만의 체크리스트' 기능**을 중심으로 CRUD를 구현했습니다.                                                                | `useChecklist.js`                 |
-|                      | **C (Create):** `addItem()`을 통해 새 체크리스트 항목 추가                                                                  | `FavoriteDetail.js`               |
-|                      | **R (Read):** `items` 상태를 통해 해당 공연의 체크리스트 목록 조회                                                          | `FavoriteDetail.js`               |
-|                      | **U (Update):** `updateItem()`, `toggleItem()`으로 항목 내용 수정 및 완료 처리                                              | `FavoriteDetail.js`               |
-|                      | **D (Delete):** `deleteItem()`으로 특정 항목 삭제                                                                           | `FavoriteDetail.js`               |
-| **SPA (Routing)**    | `react-router-dom`을 사용하여 페이지 간 깜빡임 없는 사용자 경험 제공                                                        | `App.js` 내 `<Routes>`, `<Route>` |
+| 기능                 | 구현 내용                                                                                                                 | 적용 기술/코드                    |
+| :------------------- | :------------------------------------------------------------------------------------------------------------------------ | :-------------------------------- |
+| **CRUD**             | **'나만의 체크리스트' 기능**을 중심으로 CRUD를 구현했습니다.                                                              | `useChecklist.js`                 |
+|                      | **C (Create):** `addItem()`을 통해 새 체크리스트 항목 추가                                                                | `FavoriteDetail.js`               |
+|                      | **R (Read):** `items` 상태를 통해 해당 공연의 체크리스트 목록 조회                                                        | `FavoriteDetail.js`               |
+|                      | **U (Update):** `updateItem()`, `toggleItem()`으로 항목 내용 수정 및 완료 처리                                            | `FavoriteDetail.js`               |
+|                      | **D (Delete):** `deleteItem()`으로 특정 항목 삭제                                                                         | `FavoriteDetail.js`               |
+| **SPA (Routing)**    | `react-router-dom`을 사용하여 페이지 간 깜빡임 없는 사용자 경험 제공                                                      | `App.js` 내 `<Routes>`, `<Route>` |
 | **무한 스크롤**      | **Intersection Observer API**를 직접 구현하여 사용자가 페이지 하단에 도달하면 다음 페이지의 데이터를 자동으로 로드합니다. | `Performances.js`                 |
-| **코드 스플리팅**    | 초기 로딩 속도 최적화를 위해 각 페이지 컴포넌트를 **lazy()**와 **<Suspense>**를 사용하여 분리했습니다.                  | `App.js`                          |
-| **외부 데이터 연동** | **KOPIS (공연예술통합전산망)**의 오픈 API를 활용하여 실시간 공연 데이터를 연동했습니다.                                     | `api/kopis.js`                    |
-| **반응형 웹**        | CSS Grid Layout과 Media Query를 활용하여 PC, 태블릿, 모바일 등 다양한 디바이스 환경에 대응하는 UI를 구현했습니다.           | `Performances.css` 등             |
+| **코드 스플리팅**    | 초기 로딩 속도 최적화를 위해 각 페이지 컴포넌트를 <b>lazy()</b>와 <b><Suspense></b>를 사용하여 분리했습니다.              | `App.js`                          |
+| **외부 데이터 연동** | <b>KOPIS (공연예술통합전산망)</b>의 오픈 API를 활용하여 실시간 공연 데이터를 연동했습니다.                                | `api/kopis.js`                    |
+| **반응형 웹**        | CSS Grid Layout과 Media Query를 활용하여 PC, 태블릿, 모바일 등 다양한 디바이스 환경에 대응하는 UI를 구현했습니다.         | `Performances.css` 등             |
 
 <br>
 
