@@ -66,6 +66,25 @@ STAGE FINDER는 KOPIS API를 활용하여 국내 공연 정보를 손쉽게 탐�
 
 ![프로젝트 기능 흐름도](./images/flowchart.JPG)
 
+와, 이 스크린샷으로 정확한 원인을 찾았습니다!
+
+images 폴더도 깃허브에 잘 올라와 있고, 파일 이름도 정확합니다. 문제는 README.md 파일의 Markdown 문법이 아주 미세하게 잘못되었습니다.
+
+제가 드린 코드에 실수가 있었습니다.
+
+잘못된 코드: !['필터 결과' ... ](./images/...)
+
+올바른 코드: ![필터 결과 ... ](./images/...)
+
+alt 텍스트(대괄호 [] 안의 설명)를 감싸는 **작은따옴표(' ')**가 있으면 Markdown이 이미지를 제대로 인식하지 못합니다.
+
+💡 해결책
+아래 ## 5. 주요 기능 실행 화면 섹션 코드를 통째로 복사해서 README.md 파일에 덮어쓰기 하세요. 제가 모든 이미지 링크에서 작은따옴표를 제거했습니다.
+
+이 README.md 파일을 다시 commit, push 하시면 100% 해결됩니다.
+
+Markdown
+
 ## 5. 주요 기능 실행 화면
 
 프로젝트의 핵심 기능들을 간략한 GIF와 상세 기능 목록, 그리고 대표 스크린샷으로 소개합니다.
@@ -77,6 +96,7 @@ STAGE FINDER는 KOPIS API를 활용하여 국내 공연 정보를 손쉽게 탐�
 _(필터링 및 무한 스크롤)_
 
 ![공연 기능 GIF](./images/performances.gif)
+
 <br>
 
 <details>
@@ -94,7 +114,7 @@ _(필터링 및 무한 스크롤)_
   <b>[대표 스크린샷]</b><br>
   아래는 3가지 필터가 중첩 적용된 결과이며, 카드에 마우스를 올렸을 때 '찜하기'와 '예매하기' 버튼이 활성화된 화면입니다.
   <br>
-  !['필터 결과' 및 '핵심 기능' 스크린샷](./images/perf_result_features.png)
+  ![필터 결과 및 핵심 기능 스크린샷](./images/perf_result_features.png)
 </details>
 
 ---
@@ -105,6 +125,7 @@ _(필터링 및 무한 스크롤)_
 _(메인 탭 네비게이션)_
 
 ![커뮤니티 기능 GIF](./images/community.gif)
+
 <br>
 
 <details>
@@ -121,7 +142,7 @@ _(메인 탭 네비게이션)_
   <b>[대표 스크린샷]</b><br>
   아래는 커뮤니티 탭의 대표 기능 중 하나인 '투표' 탭의 구현 화면입니다.
   <br>
-  !['투표' 탭 대표 스크린샷](./images/comm_poll_features.png)
+  ![투표 탭 대표 스크린샷](./images/comm_poll_features.png)
 </details>
 
 ---
@@ -132,6 +153,7 @@ _(메인 탭 네비게이션)_
 _(체크리스트 CRUD 전체 사이클)_
 
 ![마이페이지 CRUD GIF](./images/mypage_crud.gif)
+
 <br>
 
 <details>
@@ -149,13 +171,14 @@ _(체크리스트 CRUD 전체 사이클)_
   이 상세 페이지에서 **CRUD** 4가지 기능이 모두 구현됩니다.<br> 
   `localStorage`에서 목록을 **조회(Read)**하고, 하단의 입력폼으로 항목을 **생성(Create)**하며, 체크박스로 상태를 **수정(Update)**하고, 아이콘으로 **삭제(Delete)**할 수 있습니다.
   <br>
-  !['체크리스트 CRUD' 기능 스크린샷](./images/mypage_detail_crud.png)
+  ![체크리스트 CRUD 기능 스크린샷](./images/mypage_detail_crud.png)
 </details>
+
 ---
 
 ### (4) 🖥️ 반응형 웹 디자인 (전체 페이지 적용)
 
-프로젝트의 **모든 페이지**는 CSS Grid Layout과 Media Query를 활용하여 PC, 태블릿, 모바일 등 다양한 디바이스 환경에 대응합니다.
+프로젝트의 **모든 페이지**는 CSS Grid Layout과 Media Query를 활용하여 PC, 태블릿, 모바일 등 다양한 디바이스 환경에 대응합니다. (아래는 '잡담' 탭의 예시 화면입니다.)
 
 <table border="0" style="border:none; border-collapse:collapse;">
   <tr style="border:none;">
