@@ -1,4 +1,4 @@
-Markdown
+...플랫폼!!
 
 # 🎭 STAGE FINDER - 공연 정보 탐색 및 커뮤니티 플랫폼
 
