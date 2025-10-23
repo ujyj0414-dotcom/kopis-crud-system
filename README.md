@@ -1,5 +1,3 @@
-...플랫폼!!
-
 # 🎭 STAGE FINDER - 공연 정보 탐색 및 커뮤니티 플랫폼
 
 STAGE FINDER는 KOPIS API를 활용하여 국내 공연 정보를 손쉽게 탐색하고, 사용자들과 소통할 수 있는 커뮤니티 기능을 제공하는 React 기반의 SPA(Single Page Application) 프로젝트입니다.
