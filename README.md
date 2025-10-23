@@ -1,3 +1,5 @@
+Markdown
+
 # 🎭 STAGE FINDER - 공연 정보 탐색 및 커뮤니티 플랫폼
 
 STAGE FINDER는 KOPIS API를 활용하여 국내 공연 정보를 손쉽게 탐색하고, 사용자들과 소통할 수 있는 커뮤니티 기능을 제공하는 React 기반의 SPA(Single Page Application) 프로젝트입니다.
@@ -10,19 +12,19 @@ STAGE FINDER는 KOPIS API를 활용하여 국내 공연 정보를 손쉽게 탐�
 
 - **참고 사이트 및 차별점**
 
-  - **참고 사이트:** 인터파크 티켓, 예스24 티켓 등 기존 예매 사이트
+- **참고 사이트:** 인터파크 티켓, 예스24 티켓 등 기존 예매 사이트
 
-  - **차별점:**
+- **차별점:**
 
-    1.  **커뮤니티 기능 통합:** 단순 정보 조회를 넘어, [인기글], [투표], [게시판] 기능을 통해 사용자 간의 활발한 소통을 유도합니다.
+1.  **커뮤니티 기능 통합:** 단순 정보 조회를 넘어, [인기글], [투표], [게시판] 기능을 통해 사용자 간의 활발한 소통을 유도합니다.
 
-    2.  **개인화된 '준비 체크리스트':** 공연 관람 전 필요한 준비물(보조배터리, 티켓, 신분증 등)을 챙기기 위해 SNS에서 체크리스트를 공유하는 경우가 많습니다. STAGE FINDER는 이 경험을 서비스 내에 통합했습니다. 사용자는 **찜한 공연별로 나만의 '준비 체크리스트'를 직접 생성하고 관리**함으로써, 분산된 정보 없이 체계적으로 관람을 준비할 수 있습니다.
+2.  **개인화된 '준비 체크리스트':** 공연 관람 전 필요한 준비물(보조배터리, 티켓, 신분증 등)을 챙기기 위해 SNS에서 체크리스트를 공유하는 경우가 많습니다. STAGE FINDER는 이 경험을 서비스 내에 통합했습니다. 사용자는 **찜한 공연별로 나만의 '준비 체크리스트'를 직접 생성하고 관리**함으로써, 분산된 정보 없이 체계적으로 관람을 준비할 수 있습니다.
 
-    3.  탐색에 집중된 경험: 저희는 '발견'의 경험을 최우선으로 설계했습니다. 앱 내에 무거운 예매 기능을 넣는 대신, '예매하기' 버튼으로 KOPIS 공식 예매처를 연결하는 가볍고 직관적인 방식을 채택했습니다. 이를 통해 사용자는 방해 없이 탐색에만 집중하고, 예매는 신뢰할 수 있는 곳에서 진행할 수 있습니다.
+3.  **분산된 예매처 정보의 통합 게이트웨이:** 기존 예매 사이트(인터파크, 예스24 등)는 자사에서 판매하는 공연 정보만 보여줍니다. 하지만 STAGE FINDER는 KOPIS API를 통해 이들을 포함하여, **네이버 예매, 개별 극단 자체 사이트** 등 흩어져 있는 **모든 예매처의 정보를 집계**합니다. 사용자는 '예매하기' 버튼을 통해 KOPIS 공식 상세 페이지로 이동하며, 그곳에 있는 **'예매처 바로가기'**를 통해 다시 검색할 필요 없이 원하는 예매처로 정확하게 이동할 수 있습니다.
 
 - **팀 협업 노션 링크**
 
-  - [여기에 팀 노션 페이지 링크를 삽입하세요]
+- [여기에 팀 노션 페이지 링크를 삽입하세요]
 
 <br>
 
@@ -95,7 +97,6 @@ STAGE FINDER는 KOPIS API를 활용하여 국내 공연 정보를 손쉽게 탐�
 ### (1) 🎭 공연 카테고리
 
 **1. 핵심 기능 (GIF)**
-
 _(필터링 및 무한 스크롤)_
 
 ![공연 기능 GIF](./images/performances.gif)
@@ -110,27 +111,27 @@ _(필터링 및 무한 스크롤)_
 
 <b>[주요 구현 기능]</b>
 
-  <ul>
+<ul>
 
-    <li>KOPIS (공연예술통합전산망) <b>외부 API 연동</b></li>
+<li>KOPIS (공연예술통합전산망) <b>외부 API 연동</b></li>
 
-    <li>'장르', '지역', '상태' 3가지 State를 조합한 <b>동적 API 재호출</b> (중첩 필터링)</li>
+<li>'장르', '지역', '상태' 3가지 State를 조합한 <b>동적 API 재호출</b> (중첩 필터링)</li>
 
-    <li><code>Intersection Observer</code> API를 사용한 <b>무한 스크롤</b> 구현</li>
+<li><code>Intersection Observer</code> API를 사용한 <b>무한 스크롤</b> 구현</li>
 
-    <li><code>useFavorites</code> 커스텀 훅을 통한 전역 <b>'찜하기'</b> 상태 관리</li>
+<li><code>useFavorites</code> 커스텀 훅을 통한 전역 <b>'찜하기'</b> 상태 관리</li>
 
-    <li>KOPIS 상세 페이지로 연결되는 <b>'예매하기'</b> 링크 제공</li>
+<li>KOPIS 상세 페이지로 연결되는 <b>'예매하기'</b> 링크 제공</li>
 
-  </ul>
+</ul>
 
-  <hr>
+<hr>
 
 <b>[대표 스크린샷]</b><br>
 
 아래는 3가지 필터가 중첩 적용된 결과이며, 카드에 마우스를 올렸을 때 '찜하기'와 '예매하기' 버튼이 활성화된 화면입니다.
 
-  <br>
+<br>
 
 ![필터 결과 및 핵심 기능 스크린샷](./images/perf_result_features.png)
 
@@ -141,7 +142,6 @@ _(필터링 및 무한 스크롤)_
 ### (2) 💬 잡담 카테고리
 
 **1. 커뮤니티 탭 기능 (GIF)**
-
 _(메인 탭 네비게이션)_
 
 ![커뮤니티 기능 GIF](./images/community.gif)
@@ -156,25 +156,25 @@ _(메인 탭 네비게이션)_
 
 <b>[주요 구현 기능]</b>
 
-  <ul>
+<ul>
 
-    <li>'인기글', '투표', '게시판' 3가지 메인 탭으로 <b>조건부 렌더링</b></li>
+<li>'인기글', '투표', '게시판' 3가지 메인 탭으로 <b>조건부 렌더링</b></li>
 
-    <li>'인기글' 탭: '일간/주간/월간' 하위 필터링 및 <b>무한 스크롤</b> 적용</li>
+<li>'인기글' 탭: '일간/주간/월간' 하위 필터링 및 <b>무한 스크롤</b> 적용</li>
 
-    <li>'투표' 탭: 'HOT/반반/신규' 하위 필터링 및 <b>'좋아요/싫어요' 투표 로직</b> 구현</li>
+<li>'투표' 탭: 'HOT/반반/신규' 하위 필터링 및 <b>'좋아요/싫어요' 투표 로직</b> 구현</li>
 
-    <li>'게시판' 탭: 게시판 라이브러리 페이지로 <b>라우팅</b> 및 개별 게시판 <b>'찜하기'</b> 기능 구현</li>
+<li>'게시판' 탭: 게시판 라이브러리 페이지로 <b>라우팅</b> 및 개별 게시판 <b>'찜하기'</b> 기능 구현</li>
 
-  </ul>
+</ul>
 
-  <hr>
+<hr>
 
 <b>[대표 스크린샷]</b><br>
 
 아래는 커뮤니티 탭의 대표 기능 중 하나인 '투표' 탭의 구현 화면입니다.
 
-  <br>
+<br>
 
 ![투표 탭 대표 스크린샷](./images/comm_poll_features.png)
 
@@ -185,7 +185,6 @@ _(메인 탭 네비게이션)_
 ### (3) ⭐️ MY PAGE
 
 **1. 찜 취소 및 체크리스트 CRUD (GIF)**
-
 _(체크리스트 CRUD 전체 사이클)_
 
 ![마이페이지 CRUD GIF](./images/mypage_crud.gif)
@@ -200,19 +199,19 @@ _(체크리스트 CRUD 전체 사이클)_
 
 <b>[주요 구현 기능]</b>
 
-  <ul>
+<ul>
 
-    <li>'찜 목록' 페이지: 찜한 항목 <b>조회(Read)</b> 및 <b>삭제(Delete)</b> 기능 구현</li>
+<li>'찜 목록' 페이지: 찜한 항목 <b>조회(Read)</b> 및 <b>삭제(Delete)</b> 기능 구현</li>
 
-    <li>'체크리스트' 상세 페이지: <code>useChecklist</code> 커스텀 훅을 통한 <b>CRUD</b> 구현</li>
+<li>'체크리스트' 상세 페이지: <code>useChecklist</code> 커스텀 훅을 통한 <b>CRUD</b> 구현</li>
 
-    <li><code>localStorage</code>를 활용한 체크리스트 데이터 영구 저장</li>
+<li><code>localStorage</code>를 활용한 체크리스트 데이터 영구 저장</li>
 
-    <li>항목 <b>생성(Create)</b>, <b>조회(Read)</b>, 체크박스를 통한 <b>수정(Update)</b>, 버튼을 통한 <b>삭제(Delete)</b></li>
+<li>항목 <b>생성(Create)</b>, <b>조회(Read)</b>, 체크박스를 통한 <b>수정(Update)</b>, 버튼을 통한 <b>삭제(Delete)</b></li>
 
-  </ul>
+</ul>
 
-  <hr>
+<hr>
 
 <b>[대표 스크린샷: 체크리스트 CRUD]</b><br>
 
@@ -220,7 +219,7 @@ _(체크리스트 CRUD 전체 사이클)_
 
 `localStorage`에서 목록을 **조회(Read)**하고, 하단의 입력폼으로 항목을 **생성(Create)**하며, 체크박스로 상태를 **수정(Update)**하고, 아이콘으로 **삭제(Delete)**할 수 있습니다.
 
-  <br>
+<br>
 
 ![체크리스트 CRUD 기능 스크린샷](./images/mypage_detail_crud.png)
 
@@ -234,32 +233,32 @@ _(체크리스트 CRUD 전체 사이클)_
 
 <table border="0" style="border:none; border-collapse:collapse;">
 
-  <tr style="border:none;">
+<tr style="border:none;">
 
-    <td align="center" style="border:none; padding: 5px;">
+<td align="center" style="border:none; padding: 5px;">
 
-      <img src="./images/responsive_pc.png" width="400" alt="PC 화면">
+<img src="./images/responsive_pc.png" width="400" alt="PC 화면">
 
-      <br><b>PC (데스크탑)</b>
+<br><b>PC (데스크탑)</b>
 
-    </td>
+</td>
 
-    <td align="center" style="border:none; padding: 5px;">
+<td align="center" style="border:none; padding: 5px;">
 
-      <img src="./images/responsive_tablet.png" width="250" alt="태블릿 화면">
+<img src="./images/responsive_tablet.png" width="250" alt="태블릿 화면">
 
-      <br><b>태블릿 (886px)</b>
+<br><b>태블릿 (886px)</b>
 
-    </td>
+</td>
 
-    <td align="center" style="border:none; padding: 5px;">
+<td align="center" style="border:none; padding: 5px;">
 
-      <img src="./images/responsive_mobile.png" width="150" alt="모바일 화면">
+<img src="./images/responsive_mobile.png" width="150" alt="모바일 화면">
 
-      <br><b>모바일 (582px)</b>
+<br><b>모바일 (582px)</b>
 
-    </td>
+</td>
 
-  </tr>
+</tr>
 
 </table>
