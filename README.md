@@ -42,7 +42,7 @@ STAGE FINDER는 KOPIS API를 활용하여 국내 공연 정보를 손쉽게 탐�
     <tr>
       <td align="center" valign="top" width="33.3%">
         <a href="https://github.com/teomichaelpark">
-          <img src="https://github.com/teomichaelpark-glitch.png?size=100" alt="박태오 프로필 사진"/><br />
+          <img src="https://github.com/teomichaelpark.png?size=100" alt="박태오 프로필 사진"/><br />
           <sub><b>박태오 (팀장)</b></sub>
         </a>
       </td>
