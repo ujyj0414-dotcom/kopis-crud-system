@@ -82,7 +82,7 @@ STAGE FINDER는 KOPIS API를 활용하여 국내 공연 정보를 손쉽게 탐�
 - **커뮤니티 '투표' 기능 개발:** `Performances.js` 내 커뮤니티 탭 기능 중 '투표' 파트를 전담했습니다.
 - **'투표' 필터링 로직 구현:** `dummyPolls.js` 데이터와 연동하여 동적 필터링 탭 UI를 구현하고, 선택된 필터(`selectedPollsType`)를 `PollsPage` 컴포넌트에 `prop`으로 전달하여 조건부 렌더링하는 로직을 개발했습니다.
 
-## 4. Flow 및 UI
+## 4. Flow Chart
 
 ### 기능 흐름도 (Flow Chart)
 
